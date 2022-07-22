@@ -1,18 +1,14 @@
 import React from "react"
 
-export default function Menu(){
-    const [Start, setStart]= React.useState('Menu')
+export default function Menu({setTela, tela}){
 
-    function Começar(){
-        setStart('hidden')
-    }
 
     return(
         <>
-        <div className={Start}>
+        <div className='Menu'>
         <img src="images/logo.png" />
         <h1>ZapRecall</h1>
-        <div onClick={Começar} className="Start">
+        <div onClick={()=> setTela(!tela)} className="Start">
         Iniciar Recall!
         </div>
         </div>
