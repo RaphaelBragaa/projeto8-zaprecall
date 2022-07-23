@@ -1,6 +1,9 @@
+import React from "react"
 import Respostas from "./Respostas"
+import setinha from "../images/setinha.png"
 
-export default function Verso({index, View, setView}){
+export default function Verso({Ready,setReady}){
+    const [click, setClick]=React.useState(false)
     const Perguntas =[
         {pergunta:'O que é JSX?', resposta:'Uma extensão de linguagem do JavaScript'},
         {pergunta:'Componentes devem iniciar com __',resposta:'letra maiúscula'},
@@ -17,11 +20,13 @@ export default function Verso({index, View, setView}){
     
     return(
         <>
-       <div key={index} className={"Pergunta "+ View}>
+       <div className={"Pergunta"}>
             <h2>{Perguntas[i].pergunta}</h2>
-            <h2 >{Perguntas[i].resposta}</h2>
-            <Respostas/>
+            {click?(<></>):(<img onClick={()=>setClick(true)}src={setinha}/>)}
+            {click? (<h2 >{Perguntas[i].resposta}</h2> ) : (<></>) }
+            {click?(<Respostas Ready={Ready} setReady={setReady}/>):(<></>)}
        </div>
+      
         </>
     )
 }

@@ -1,7 +1,10 @@
 import ReactDOM from "react-dom";
 import React from "react"
-import Menu from "./components/Menu";
-import Questions from "./components/Questions";
+import Menu from "./components/Menu/Menu";
+import Questions from "./components/Question/Questions";
+import "./css/reset.css"
+import "./css/style.css"
+
 
 function App(){
     const [tela, setTela] = React.useState(true)

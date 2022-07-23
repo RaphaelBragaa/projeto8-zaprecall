@@ -1,23 +1,25 @@
 import React from "react"
-import Footer from "./Footer"
-import Flashcard from "./Flashcard"
+import Footer from "../Footer/Footer"
+import Flashcard from "../Flashcard/Flashcard"
+import logo from "../../images/logo-pequeno.png"
 
 
 export default function Questions(){
   const [hidden, setHidden] = React.useState('')
   const Number =[1,2,3,4]
+  const [Ready, setReady]=React.useState(0)
 
     return(
         <>
         <div className="Logo">
-        <img src="images/logo-pequeno.png" />
+        <img src={logo} />
         <h1>ZapRecall</h1>
         </div>
         {Number.map((Number) => (
-        <Flashcard Number={Number}/>
+        <Flashcard Number={Number} Ready={Ready} setReady={setReady}/>
       ))}
        
-      <Footer/>
+      <Footer Ready={Ready}/>
         </>
     )
 }
