@@ -3,7 +3,7 @@ import Verso from "../Verso/Verso"
 
 
 
-export default function Frente({Number, Ready, setReady, Type, setType, Results, setResults}){
+export default function Frente({Number, Ready, setReady, Type, setType, Results, setResults,error,order,setOrder}){
     const [Question, setQuestion] = React.useState(false);
     
 
@@ -12,7 +12,7 @@ export default function Frente({Number, Ready, setReady, Type, setType, Results,
         <div className={Question ? 'hidden':'Question'}>
             <h2>Pergunta {Number}</h2> <ion-icon onClick={()=> setQuestion(!Question)} name="play-outline"></ion-icon>
         </div>
-       {Question ? (<Verso Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}  setQuestion={setQuestion}/>):(<></>)} 
+       {Question ? (<Verso Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}  setQuestion={setQuestion} error={error}  order={order} setOrder={setOrder}/>):(<></>)} 
         </>
     )
 }

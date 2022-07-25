@@ -5,7 +5,7 @@ import doubt from "../../images/doubt.png"
 
 export default function Footer({Ready, Results,setResults,Type,setType}){
 
-console.log(Results)
+
     
 
 

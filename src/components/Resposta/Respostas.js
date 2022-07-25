@@ -1,9 +1,11 @@
 import React from "react"
-import error from "../../images/error.png"
 import right from "../../images/right.png"
 import doubt from "../../images/doubt.png"
 
-export default function Respostas({Ready,setReady, Type, setType, Results, setResults, setQuestion}){
+export default function Respostas({Ready,setReady, Type, setType, Results, setResults, setQuestion,error,order,setOrder}){
+    const [orda,setOrda]=React.useState(false)
+console.log(error)
+console.log(order)
 
 
     function Soma(number){
@@ -16,6 +18,8 @@ export default function Respostas({Ready,setReady, Type, setType, Results, setRe
             newResults =[...Results,error]
             setResults(newResults)
             setQuestion(false)
+            setOrder(false)
+            console.log(order)
     }if(number===2){
             newResults = [...Results,doubt]
             setResults(newResults)
@@ -24,6 +28,14 @@ export default function Respostas({Ready,setReady, Type, setType, Results, setRe
         setResults([...Results,right])
         setQuestion(false)
     }
+    for(let i=0;i<Results.length;i++){
+        if(Results[i]===error){
+        setOrda(true)
+        console.log(error)
+        }
+     }
+     
+     
    
     console.log(Results)
 }

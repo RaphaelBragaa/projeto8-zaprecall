@@ -2,8 +2,9 @@ import React from "react"
 import Respostas from "../Resposta/Respostas"
 import setinha from "../../images/setinha.png"
 
- function Verso({Ready,setReady, setType,Type,Results,setResults,setQuestion}){
+ function Verso({Ready,setReady, setType,Type,Results,setResults,setQuestion,error,order,setOrder}){
     const [click, setClick]=React.useState(false)
+  
     const Perguntas =[
         {pergunta:'O que é JSX?', resposta:'Uma extensão de linguagem do JavaScript'},
         {pergunta:'Componentes devem iniciar com __',resposta:'letra maiúscula'},
@@ -29,7 +30,7 @@ import setinha from "../../images/setinha.png"
             <h2>{Perguntas[i].pergunta}</h2>
             {click?(<></>):(<img onClick={()=>setClick(true)}src={setinha}/>)}
             {click? (<h2 >{Perguntas[i].resposta}</h2> ) : (<></>) }
-            {click?(<Respostas Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}  setQuestion={setQuestion}/>):(<></>)}
+            {click?(<Respostas Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}  setQuestion={setQuestion} error={error} order={order} setOrder={setOrder}/>):(<></>)}
        </div>
       
         </>

@@ -2,7 +2,7 @@ import React from "react"
 import Footer from "../Footer/Footer"
 import Flashcard from "../Flashcard/Flashcard"
 import logo from "../../images/logo-pequeno.png"
-import right from "../../images/right.png"
+import error from "../../images/error.png"
 import Congratulations from "../Congratulations/Congratulations"
 
 
@@ -13,6 +13,7 @@ export default function Questions(){
   const [Type, setType]=React.useState(0)
   const [Results, setResults]=React.useState([])
   const [Complete, setComplete]=React.useState('hidden')
+  const [order,setOrder]=React.useState(true)
 
   
 
@@ -29,10 +30,10 @@ export default function Questions(){
         </div>
         <div className="Main" >
         {Number.map((Number) => (
-        <Flashcard Number={Number} Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}/>
+        <Flashcard Number={Number} Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults} error={error} order={order} setOrder={setOrder}/>
       ))}
        </div>
-     <Congratulations Ready={Ready} Complete={Complete} setComplete={setComplete}/>
+     <Congratulations Ready={Ready} Complete={Complete} setComplete={setComplete} Results={Results} error={error} order={order} setOrder={setOrder}/>
       <Footer Ready={Ready} Type={Type} setType={setType} Results={Results} setResults={setResults}/>
         </>
     )
