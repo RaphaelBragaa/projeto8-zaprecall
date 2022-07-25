@@ -1,8 +1,8 @@
 import React from "react"
-import Respostas from "./Respostas"
-import setinha from "../images/setinha.png"
+import Respostas from "../Resposta/Respostas"
+import setinha from "../../images/setinha.png"
 
-export default function Verso({Ready,setReady}){
+ function Verso({Ready,setReady, setType,Type,Results,setResults,setQuestion}){
     const [click, setClick]=React.useState(false)
     const Perguntas =[
         {pergunta:'O que é JSX?', resposta:'Uma extensão de linguagem do JavaScript'},
@@ -16,7 +16,12 @@ export default function Verso({Ready,setReady}){
     ]
 
     const random = (min,max)=>Math.floor(Math.random()*(max-min)-min)
-    const i = random(0,Perguntas.length)
+   
+    let i = random(0,Perguntas.length)  
+    
+    
+    
+    
     
     return(
         <>
@@ -24,12 +29,14 @@ export default function Verso({Ready,setReady}){
             <h2>{Perguntas[i].pergunta}</h2>
             {click?(<></>):(<img onClick={()=>setClick(true)}src={setinha}/>)}
             {click? (<h2 >{Perguntas[i].resposta}</h2> ) : (<></>) }
-            {click?(<Respostas Ready={Ready} setReady={setReady}/>):(<></>)}
+            {click?(<Respostas Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}  setQuestion={setQuestion}/>):(<></>)}
        </div>
       
         </>
     )
 }
+
+export default React.memo(Verso)
 
 // {Perguntas.map((Pergunta, index, i)=>{return (<div className="Pergunta">
 //             <h2 key={index}>{Pergunta[i].pergunta}</h2>

@@ -2,12 +2,24 @@ import React from "react"
 import Footer from "../Footer/Footer"
 import Flashcard from "../Flashcard/Flashcard"
 import logo from "../../images/logo-pequeno.png"
+import right from "../../images/right.png"
+import Congratulations from "../Congratulations/Congratulations"
 
 
 export default function Questions(){
-  const [hidden, setHidden] = React.useState('')
+ 
   const Number =[1,2,3,4]
   const [Ready, setReady]=React.useState(0)
+  const [Type, setType]=React.useState(0)
+  const [Results, setResults]=React.useState([])
+  const [Complete, setComplete]=React.useState('hidden')
+
+  
+
+
+
+
+
 
     return(
         <>
@@ -15,11 +27,13 @@ export default function Questions(){
         <img src={logo} />
         <h1>ZapRecall</h1>
         </div>
+        <div className="Main" >
         {Number.map((Number) => (
-        <Flashcard Number={Number} Ready={Ready} setReady={setReady}/>
+        <Flashcard Number={Number} Ready={Ready} setReady={setReady} Type={Type} setType={setType} Results={Results} setResults={setResults}/>
       ))}
-       
-      <Footer Ready={Ready}/>
+       </div>
+     <Congratulations Ready={Ready} Complete={Complete} setComplete={setComplete}/>
+      <Footer Ready={Ready} Type={Type} setType={setType} Results={Results} setResults={setResults}/>
         </>
     )
 }

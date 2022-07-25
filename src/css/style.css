@@ -50,6 +50,12 @@ body{
     font-family: 'Recursive';
 }
 
+.Main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .hidden{
     display: none;
 }
@@ -61,7 +67,7 @@ body{
     font-family: 'Righteous';
     color: #FFFFFF;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 40px;
     
 }
@@ -82,13 +88,13 @@ body{
     justify-content: space-between;
     align-items: center;
    padding: 10px;
-    width: 40%;
+    width: 70%;
     min-height: 80px;
     background-color: #FFFFFF;
     border-radius: 5px;
     font-family: 'Recursive';
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     -webkit-box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.63); 
     box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.63);
@@ -97,14 +103,14 @@ body{
 .Pergunta{
     
 
-    width: 40%;
-    height: 150px;
+    width: 70%;
+    height: 130px;
     font-family: 'Recursive';
     background-color: #FFFFD4;
     border-radius: 5px;
     font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 1.8vh;
+    margin-bottom: 20px;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
@@ -115,10 +121,13 @@ body{
 }
 
 .Pergunta img{
+    position: fixed;
     width: 30px;
     height: 20px;
     z-index: 1;
-    margin-top: 100px;
+    margin-top: 9vh;
+    margin-left: 45vh;
+    
 }
 
 ion-icon {
@@ -126,6 +135,10 @@ ion-icon {
   }
 
 footer{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
     margin: auto;
     width: 100%;
     height: 80px;
@@ -138,16 +151,33 @@ footer{
     padding-top: 20px;
 }
 
+.Resultados > img{
+    width:25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+   
+}
+
+.Resultados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   flex-direction: row;
+    margin-top: 3px;
+}
+
 .Respostas{
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    width: 90%;
     height: 50%;
     
     position: absolute;
-    z-index: 1;
+   margin-right: 50px;
     margin-top: 34px;
     bottom: 0;
+
 }
 
 .Caixa{
@@ -176,3 +206,40 @@ footer{
     background-color:#2FBE34;
     
 }
+
+.Congratulations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: #FFFFFF;
+    margin-top: 100px;
+    font-family: 'Recursive';
+}
+
+.Congratulations > h2{
+    font-size: 20px;
+    width: 40%;
+    text-align: center;
+}
+
+.Title{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.Title > img{
+    height: 23px;
+    width: 23px;
+    margin-right: 10px;
+}
+
+
+
+
+.Congratulations > div > h1{
+    font-weight: 700;
+}
+
